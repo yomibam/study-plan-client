@@ -75,13 +75,18 @@
   font-weight: 500;
 }
 
-.search-course-inputbox {
+.inputbox {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+}
+
+form.search-course-inputbox {
   display: flex;
   flex-direction: column;
-  gap: 15px;
   justify-content: center;
   align-items: center;
-  padding: 0 30%;
+  /* width: 100%; */
 }
 
 input.search-course-inputbox {
@@ -89,7 +94,7 @@ input.search-course-inputbox {
   font-weight: 200;
   border: 1.5px solid #26324a;
   padding: 16px;
-  width: 180%;
+  /* width: 180%; */
 }
 
 input.search-course-inputbox:focus {
@@ -509,6 +514,14 @@ button.search-course-submit-button:hover {
   /* Styles for small screens go here */
   .nav-bar-list {
     display: none;
+  }
+  .inputbox {
+    flex-direction: column;
+    gap: 10px;
+    /* width: 100%; */
+  }
+  form.search-course-inputbox {
+    width: 80%;
   }
 }
 
