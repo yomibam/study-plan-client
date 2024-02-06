@@ -1,0 +1,3 @@
+### Welcome to Study Plan!
+
+We're here to simplify your educational journey, connecting you with the perfect courses across the globe. From vibrant cities in the Netherlands to academic hubs in the United States, Study Plan has you covered. Discover courses aligned with your interests and career goals. Our platform offers a global array of programs from prestigious institutions, expanding your educational horizons. Navigate effortlessly with our user-friendly interface. Seamlessly plan your academic journey from application to graduation. Join Study Plan today and let us guide you on an educational adventure, turning your dreams into a reality!
