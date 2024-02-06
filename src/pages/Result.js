@@ -1,13 +1,13 @@
 import React from "react";
-import { useLocation, useNavigate } from "react-router-dom"; // Import useLocation
+import { useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../components/NavBar";
 import Footer from "../components/Footer";
 import arrow_back from "../assets/arrow_back.png";
 
 export const Result = () => {
-  const location = useLocation(); // Get the location object
-  const { searchResults, courseName, studyCountry } = location.state || {}; // Extract searchResults from location state
-  const navigate = useNavigate(); // Use the useNavigate hook
+  const location = useLocation();
+  const { searchResults, courseName, courseCountry } = location.state || {};
+  const navigate = useNavigate();
 
   const openUrlInNewWindow = (url) => {
     window.open(url, "_blank");
@@ -17,20 +17,18 @@ export const Result = () => {
     <div>
       <Navbar />
       <div className="back-to-previous-page" onClick={() => navigate(-1)}>
-        {/* Use navigate(-1) to go back to the previous page */}
         <img className="arrow-back" src={arrow_back} alt="back" />
         <span>Back</span>
       </div>
-      {courseName && studyCountry ? (
+      {courseName && courseCountry ? (
         <div>
           <h3 className="result-page-header">
-            Programs available for {courseName} in {studyCountry}
+            Programs available for {courseName} in {courseCountry}
           </h3>
         </div>
       ) : (
         <h3 className="result-page-header">All Programs</h3>
       )}
-      {/* Displays the number of results */}
       {searchResults && (
         <p className="result-counter">{searchResults.length} result(s) found</p>
       )}
@@ -40,7 +38,7 @@ export const Result = () => {
             <div
               key={result.id}
               className="result-display"
-              onClick={() => openUrlInNewWindow(result.url)} //Opens the url in a new window
+              onClick={() => openUrlInNewWindow(result.url)}
             >
               <h3>{result.name}</h3>
               <p>{result.school}</p>
@@ -55,7 +53,6 @@ export const Result = () => {
           <p className="no-result-found">No results found</p>
         )}
       </div>
-
       <Footer />
     </div>
   );

@@ -1,97 +1,47 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import netherlandsData from "../courseData/netherlandsData";
-import usData from "../courseData/usData";
-import australiaData from "../courseData/australiaData";
-import canadaData from "../courseData/canadaData";
-import ukData from "../courseData/ukData";
 
 function SearchCourse() {
-  const [courseName, setCourseName] = useState("");
-  const [studyCountry, setStudyCountry] = useState("");
+  const [courses, setCourses] = useState([]);
   const navigate = useNavigate();
 
-  const handleCourseInput = (e) => {
-    setCourseName(e.target.value);
-  };
+  const handleSearch = async (e) => {
+    const { courseName, courseCountry } = e.target.elements;
+    e.preventDefault();
 
-  const handleCountryInput = (e) => {
-    setStudyCountry(e.target.value);
-  };
-
-  const handleSearch = () => {
-    let result;
-
-    if (studyCountry.toLowerCase() === "netherlands") {
-      result = netherlandsData.filter((course) =>
-        course.name.toLowerCase().includes(courseName.toLowerCase())
+    try {
+      const response = await fetch(
+        `http://localhost:5000/courses?course=science&country=australia`
       );
-    } else if (
-      studyCountry.toLowerCase() === "united states" ||
-      studyCountry.toLowerCase() === "us" ||
-      studyCountry.toLowerCase() === "usa"
-    ) {
-      result = usData.filter((course) =>
-        course.name.toLowerCase().includes(courseName.toLowerCase())
-      );
-    } else if (studyCountry.toLowerCase() === "australia") {
-      result = australiaData.filter((course) =>
-        course.name.toLowerCase().includes(courseName.toLowerCase())
-      );
-    } else if (studyCountry.toLowerCase() === "canada") {
-      result = canadaData.filter((course) =>
-        course.name.toLowerCase().includes(courseName.toLowerCase())
-      );
-    } else if (
-      studyCountry.toLowerCase() === "united kingdom" ||
-      studyCountry.toLowerCase() === "uk"
-    ) {
-      result = ukData.filter((course) =>
-        course.name.toLowerCase().includes(courseName.toLowerCase())
-      );
-    } else {
-      // Handle other countries or show an error message
-      console.error("Unsupported study country:", studyCountry);
-      return;
+      const data = await response.json();
+      setCourses(data);
+    } catch (error) {
+      console.error(error);
     }
-
-    navigate("/result", {
-      state: { searchResults: result, courseName, studyCountry },
-    });
-
-    console.log(
-      "Search Results for " + courseName + " in " + studyCountry,
-      result
-    );
   };
 
   return (
     <div className="search-course">
       <h4 className="search-course-header">Begin your journey here</h4>
-      <div className="search-course-inputbox">
+      <form className="search-course-inputbox" onSubmit={handleSearch}>
         <input
-          name="myCourse"
-          id="myCourse"
-          value={courseName}
-          onChange={handleCourseInput}
+          name="courseName"
           className="search-course-inputbox"
           type="text"
           placeholder="Enter course of choice"
+          required
         />
         <input
-          name="myCountry"
-          id="myCountry"
-          value={studyCountry}
-          onChange={handleCountryInput}
+          name="courseCountry"
           className="search-course-inputbox"
           type="text"
           placeholder="Enter study country"
+          required
         />
-      </div>
-
-      <button className="search-course-submit-button" onClick={handleSearch}>
-        Search
-      </button>
+        <button type="submit" className="search-course-submit-button">
+          Search
+        </button>
+      </form>
     </div>
   );
 }
