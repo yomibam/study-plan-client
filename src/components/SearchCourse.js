@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 
 function SearchCourse() {
-  const [courses, setCourses] = useState([]);
   const navigate = useNavigate();
 
   const handleSearch = async (e) => {
@@ -11,10 +10,17 @@ function SearchCourse() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/courses?course=science&country=australia`
+        `http://localhost:5000/courses?course=${courseName.value}&country=${courseCountry.value}`
       );
       const data = await response.json();
-      setCourses(data);
+
+      navigate("/result", {
+        state: {
+          searchResults: data,
+          courseName: courseName.value,
+          courseCountry: courseCountry.value,
+        },
+      });
     } catch (error) {
       console.error(error);
     }
