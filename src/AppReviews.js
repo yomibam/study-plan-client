@@ -2,63 +2,27 @@
 const appReviews = [
   {
     id: 1,
-    user: "Richard Bones",
+    user: "Julian Achebe",
     rmessage:
-      "This app has really automated some of our company’s processes. We now spend less time doing manual work. It’s making searching for school for clients very easy for us. Thanks to its amazing feature.",
+      "Study Plan has been an absolute game-changer for me. As an international student, navigating through various courses and institutions was overwhelming. But with Study Plan's intuitive interface and extensive database, I was able to find the perfect program that aligned with my interests and career goals.",
   },
   {
     id: 2,
     user: "Gloria James",
     rmessage:
-      "Working with Study Plan has been an absolute pleasure. Their team of skilled professionals is not only knowledgeable in their field but also dedicated to providing top-notch service and support.",
+      "Thanks to Study Plan, I found my dream course in the Netherlands! The platform's user-friendly interface allowed me to effortlessly browse through a wide range of programs offered by top universities across the globe. I particularly appreciated the personalized recommendations based on my preferences and academic background. ",
   },
   {
     id: 3,
     user: "Sean Diop",
     rmessage:
-      "If you’re in search of a reliable, innovative software company, look no further than [SoftwareCompany]. Their team of seasoned professionals consistently exceeds expectations, offering cutting-edge solutions and exceptional customer service.",
+      "Study Plan exceeded my expectations in every aspect. From the moment I signed up, I was impressed by the platform's professionalism and attention to detail. The search filters made it easy to narrow down my options based on location, field of study, and tuition fees. ",
   },
   {
     id: 4,
-    user: "Andrew Sega",
+    user: "Matthew Afolarin",
     rmessage:
-      "This app has really automated some of our company’s processes. We now spend less time doing manual work. It’s making searching for school for clients very easy for us. Thanks to its amazing feature.",
-  },
-  {
-    id: 5,
-    user: "Casandra Morin",
-    rmessage:
-      "If you’re in search of a reliable, innovative software company, look no further than [SoftwareCompany]. Their team of seasoned professionals consistently exceeds expectations, offering cutting-edge solutions and exceptional customer service.",
-  },
-  {
-    id: 6,
-    user: "Idina Monroe",
-    rmessage:
-      "This app has really automated some of our company’s processes. We now spend less time doing manual work. It’s making searching for school for clients very easy for us. Thanks to its amazing feature.",
-  },
-  {
-    id: 7,
-    user: "Lana Freed",
-    rmessage:
-      "Working with Study Plan has been an absolute pleasure. Their team of skilled professionals is not only knowledgeable in their field but also dedicated to providing top-notch service and support.",
-  },
-  {
-    id: 8,
-    user: "Mike Foster",
-    rmessage:
-      "If you’re in search of a reliable, innovative software company, look no further than [SoftwareCompany]. Their team of seasoned professionals consistently exceeds expectations, offering cutting-edge solutions and exceptional customer service.",
-  },
-  {
-    id: 9,
-    user: "Christina Deel",
-    rmessage:
-      "Working with Study Plan has been an absolute pleasure. Their team of skilled professionals is not only knowledgeable in their field but also dedicated to providing top-notch service and support.",
-  },
-  {
-    id: 10,
-    user: "Hanna Croft",
-    rmessage:
-      "This app has really automated some of our company’s processes. We now spend less time doing manual work. It’s making searching for school for clients very easy for us. Thanks to its amazing feature.",
+      "Study Plan has been my go-to platform for researching and planning my academic journey. As someone with a specific interest in studying in the United States, I found the platform's database of courses and institutions incredibly comprehensive. The user-friendly interface made it easy for me to compare different programs and universities, considering factors like location, program duration, and accreditation. ",
   },
 ];
 
