@@ -14,7 +14,7 @@ export const Result = () => {
   };
 
   return (
-    <div>
+    <div className="result">
       <Navbar />
       <div className="back-to-previous-page" onClick={() => navigate(-1)}>
         <img className="arrow-back" src={arrow_back} alt="back" />
