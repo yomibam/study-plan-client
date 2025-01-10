@@ -12,7 +12,7 @@ function SearchCourse() {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/courses?course=${courseName.value}&country=${courseCountry.value}`
+        `https://api-studyplan.onrender.com/courses?course=${courseName.value}&country=${courseCountry.value}`
       );
       const data = await response.json();
 
